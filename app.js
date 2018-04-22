@@ -7,6 +7,8 @@ const express    	 = require("express"),
 
 // conncet to blog database
 mongoose.connect("mongodb://localhost/blog");
+// blogs : collections
+const Blog = require("./models/blog");
 
 // set ejs view engine, serve public files, parse body of post request
 app.set("view engine", "ejs");
@@ -14,17 +16,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(sanitizer());   // after bodyParser, body needs to be sanitized!!!!
 app.use(methodOverride("_method"));
-
-// schema
-const blogSchema = new mongoose.Schema({
-	title: String,
-	image: String,
-	body : String,
-	created : {type: Date, default: Date.now},
-})
-
-// blogs : collections
-const Blog = mongoose.model("Blogs", blogSchema);
 
 // RESTFUL ROUTES:  
 app.get("/", function(req, res){
