@@ -3,7 +3,7 @@ const express    	 = require("express"),
 	  bodyParser 	 = require("body-parser"),
 	  mongoose       = require("mongoose"),
 	  methodOverride = require("method-override"),
-	  sanitizer      = require("express-sanitizer");
+	  sanitizer      = require("express-sanitizer");  // GET RID OF SCRIPT/JS
 
 // conncet to blog database
 mongoose.connect("mongodb://localhost/blog");
@@ -26,7 +26,7 @@ const blogSchema = new mongoose.Schema({
 // blogs : collections
 const Blog = mongoose.model("Blogs", blogSchema);
 
-// RESTFUL ROUTES
+// RESTFUL ROUTES:  
 app.get("/", function(req, res){
 	res.redirect("/blogs");
 })
