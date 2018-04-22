@@ -1,0 +1,26 @@
+html, body {
+	height: 100%;
+}
+
+img {
+	height: 200px;
+	width: 100%;     /* of div */
+}
+
+.blog-container {
+	max-width: 500px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 45px;
+}
+
+i.icon {
+	font-size: 1.2em;
+}
+
+.container.segment {
+	margin-top: 7.0em;
+}
+#delete-form {
+	display: inline;
+}
